@@ -47,6 +47,12 @@ const config = {
 module.exports = config;
 ```
 
+- Add script in package.json
+
+```
+"clear": "watchman watch-del-all && rm -rf ios/build/ && rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/haste-* && rm -rf $TMPDIR/metro-* && rm -rf node_modules && npm install && react-native link && npm start -- --reset-cache"
+```
+
 - Add package.json in the root of share project
 
 ```
@@ -71,4 +77,11 @@ import lib from 'relative/path/to/share/src/utils'
 
 ```
 import lib from 'share/src/utils'
+```
+
+- Every time, you modify module in rn-cli.config.js, MUST execute the script
+
+```
+npm run clear
+react-native run-ios
 ```
