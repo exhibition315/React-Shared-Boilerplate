@@ -1,0 +1,11 @@
+$background-color: #f1f1f1;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: $background-color;
+}
